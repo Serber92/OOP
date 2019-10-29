@@ -30,3 +30,6 @@ pidr = User('Pidr', 'pidr@com', 3, 1000)
 gnida = User('Gnida', 'gnida@com', 2, 2000)
 
 pidr.account.deposit(500).display_account_info()
+
+
+
