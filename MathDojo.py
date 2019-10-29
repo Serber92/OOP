@@ -13,8 +13,25 @@ class MathDojo:
     return self
 
 
-md = MathDojo()
 
-x = md.add(2).add(2,5,1).subtract(3,2).result
+#start TDD
+import unittest
 
-print(x)
+class MathTest(unittest.TestCase):
+  def setUp(self):
+    print("Creating MathDojo obj")
+    self.md = MathDojo()
+
+  def testAdd(self):
+    self.assertEqual(self.md.add(1,2,3,4,5,6).result, 1+2+3+4+5+6)
+
+  def testSubstract(self):
+    self.assertEqual(self.md.subtract(1,2,3,4,5,6).result, -1-2-3-4-5-6)
+  
+  def tearDown(self):
+    print("Done")
+
+if __name__ == "__main__":
+  unittest.main()
+
+
